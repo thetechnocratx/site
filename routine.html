@@ -116,16 +116,15 @@
         }
 
         function displayImage() {
-            var selectedType = document.getElementById("typeSelect").value;
-            var selectedDay = document.getElementById("daySelect").value;
+    var selectedType = document.getElementById("typeSelect").value.toUpperCase();
+    var selectedDay = document.getElementById("daySelect").value;
 
-            // Convert selectedType to uppercase and construct the image source
-            var imageSource = "timetable/" + selectedType.toUpperCase() + "_" + selectedDay + "_" + currentIndex + ".JPG";
+    // Construct the image source based on the selected type, day, and currentIndex
+    var imageSource = "timetable/" + selectedType + "_" + selectedDay + "_" + currentIndex + ".JPG";
 
-            // Update the image source
-            document.getElementById("selectedImage").src = imageSource;
-        }
-
+    // Update the image source
+    document.getElementById("selectedImage").src = imageSource;
+}
 
         function nextImage() {
             currentIndex = (currentIndex + 1) % 3; // Assuming you have 3 images per day
