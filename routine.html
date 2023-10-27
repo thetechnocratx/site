@@ -114,13 +114,19 @@
             option.text = text;
             select.add(option);
         }
-
-        function displayImage() {
+function displayImage() {
     var selectedType = document.getElementById("typeSelect").value.toUpperCase();
     var selectedDay = document.getElementById("daySelect").value;
 
+    // Console log to check values
+    console.log("Selected Type:", selectedType);
+    console.log("Selected Day:", selectedDay);
+
     // Construct the image source based on the selected type, day, and currentIndex
     var imageSource = "timetable/" + selectedType + "_" + selectedDay + "_" + currentIndex + ".JPG";
+
+    // Console log the constructed image source
+    console.log("Image Source:", imageSource);
 
     // Update the image source
     document.getElementById("selectedImage").src = imageSource;
