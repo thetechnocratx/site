@@ -37,12 +37,12 @@
 
         <label for="daySelect">Choose a Day:</label>
         <select id="daySelect" name="daySelect">
-            <option value="monday">monday</option>
-            <option value="tuesday">tuesday</option>
-            <option value="wednesday">wednesday</option>
-            <option value="thursday">thursday</option>
-            <option value="friday">friday</option>
-            <option value="saturday">saturday</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
         </select>
 
         <input type="submit" value="Submit">
@@ -75,23 +75,23 @@
 
             // Add new options based on the selected fiscal year
             if (sySelect.value === "sy1") {
-                addOption(typeSelect, "a1", "a1");
-                addOption(typeSelect, "a2", "a2");
-                addOption(typeSelect, "a3", "a3");
-                addOption(typeSelect, "a4", "a4");
-                addOption(typeSelect, "a5", "a5");
-                addOption(typeSelect, "a6", "a6");
-                addOption(typeSelect, "a7", "a7");
-                addOption(typeSelect, "a8", "a8");
+                addOption(typeSelect, "A1", "A1");
+                addOption(typeSelect, "A2", "A2");
+                addOption(typeSelect, "A3", "A3");
+                addOption(typeSelect, "A4", "A4");
+                addOption(typeSelect, "A5", "A5");
+                addOption(typeSelect, "A6", "A6");
+                addOption(typeSelect, "A7", "A7");
+                addOption(typeSelect, "A8", "A8");
             } else if (sySelect.value === "sy2") {
-                addOption(typeSelect, "b1", "b1");
-                addOption(typeSelect, "b2", "b2");
-                addOption(typeSelect, "b3", "b3");
-                addOption(typeSelect, "b4", "b4");
-                addOption(typeSelect, "b5", "b5");
-                addOption(typeSelect, "b6", "b6");
-                addOption(typeSelect, "b7", "b7");
-                addOption(typeSelect, "b8", "b8");
+                addOption(typeSelect, "B1", "B1");
+                addOption(typeSelect, "B2", "B2");
+                addOption(typeSelect, "B3", "B3");
+                addOption(typeSelect, "B4", "B4");
+                addOption(typeSelect, "B5", "B5");
+                addOption(typeSelect, "B6", "B6");
+                addOption(typeSelect, "B7", "B7");
+                addOption(typeSelect, "B8", "B8");
                 addOption(typeSelect, "D1", "D1");
                 addOption(typeSelect, "D2", "D2");
             } else if (sySelect.value === "sy3") {
@@ -114,23 +114,18 @@
             option.text = text;
             select.add(option);
         }
-function displayImage() {
-    var selectedType = document.getElementById("typeSelect").value.toUpperCase();
-    var selectedDay = document.getElementById("daySelect").value;
 
-    // Console log to check values
-    console.log("Selected Type:", selectedType);
-    console.log("Selected Day:", selectedDay);
+        function displayImage() {
+            var selectedType = document.getElementById("typeSelect").value;
+            var selectedDay = document.getElementById("daySelect").value;
 
-    // Construct the image source based on the selected type, day, and currentIndex
-    var imageSource = "timetable/" + selectedType + "_" + selectedDay + "_" + currentIndex + ".JPG";
+            // Convert selectedType to uppercase and construct the image source
+            var imageSource = "timetable/" + selectedType.toUpperCase() + "_" + selectedDay + "_" + currentIndex + ".JPG";
 
-    // Console log the constructed image source
-    console.log("Image Source:", imageSource);
+            // Update the image source
+            document.getElementById("selectedImage").src = imageSource;
+        }
 
-    // Update the image source
-    document.getElementById("selectedImage").src = imageSource;
-}
 
         function nextImage() {
             currentIndex = (currentIndex + 1) % 3; // Assuming you have 3 images per day
