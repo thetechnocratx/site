@@ -49,13 +49,12 @@ input {
     margin-bottom: 15px;
     box-sizing: border-box;
 }
-
 img#selectedImage {
-    max-width: 100%;
-    height: auto;
+    max-height: 300px;
+    width: 300px;
     margin-top: 20px;
     margin: auto;
-    display: block;
+    display: block;
 }
 
 .button-container {
