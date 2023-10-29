@@ -49,12 +49,13 @@ input {
     margin-bottom: 15px;
     box-sizing: border-box;
 }
+
 img#selectedImage {
     max-height: 300px;
     width: 300px;
     margin-top: 20px;
     margin: auto;
-    display: block;
+    display: block;
 }
 
 .button-container {
@@ -73,4 +74,51 @@ footer {
     padding: 10px;
     background-color: #007bff;
     color: #fff;
+}
+
+/* Add this to your existing CSS */
+
+/* Mobile view */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        /* Adjust the font size for better readability on small screens */
+    }
+
+    header {
+        padding: 10px;
+        /* Reduce padding in the header */
+    }
+
+    form {
+        max-width: 100%;
+        /* Make the form full width on small screens */
+        padding: 15px;
+        /* Adjust padding for better spacing */
+    }
+
+    select,
+    input {
+        width: calc(100% - 20px);
+        /* Adjust width to accommodate padding */
+    }
+
+    img#selectedImage {
+        max-width: 100%;
+        /* Make the image responsive */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-top: 10px;
+        /* Adjust margin for spacing */
+    }
+
+    .button-container {
+        margin-top: 15px;
+        /* Adjust margin for spacing */
+    }
+
+    button {
+        font-size: 14px;
+        /* Adjust button font size for small screens */
+    }
 }

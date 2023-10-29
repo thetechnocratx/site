@@ -50,7 +50,7 @@
 
     <!-- Display the image based on the selections -->
     <img id="selectedImage" src="" alt="Selected Image">
-
+    <br>
     <div class="button-container">
         <button onclick="prevDay()">&#8249; Previous Day</button>
         <button onclick="nextDay()">Next Day &#8250;</button>
@@ -61,7 +61,7 @@
         <button onclick="prevType()">&#8249; Previous Batch</button>
         <button onclick="nextType()">Next Batch &#8250;</button>
     </div>
-
+    <br>
     <script>
         var currentIndex = 0; // Index to track the current image for the selected day
         var currentTypeIndex = 0; // Index to track the current type
@@ -120,7 +120,7 @@
             var selectedDay = document.getElementById("daySelect").value;
 
             // Convert selectedType to uppercase and construct the image source
-            var imageSource ="timetable/"+ selectedType + "_" + selectedDay + "_" + currentIndex + ".jpg";
+            var imageSource = "timetable/" + selectedType + "_" + selectedDay + "_" + currentIndex + ".jpg";
 
             // Update the image source
             document.getElementById("selectedImage").src = imageSource;
