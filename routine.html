@@ -75,35 +75,35 @@
 
             // Add new options based on the selected fiscal year
             if (sySelect.value === "sy1") {
-                addOption(typeSelect, "A1", "A1");
-                addOption(typeSelect, "A2", "A2");
-                addOption(typeSelect, "A3", "A3");
-                addOption(typeSelect, "A4", "A4");
-                addOption(typeSelect, "A5", "A5");
-                addOption(typeSelect, "A6", "A6");
-                addOption(typeSelect, "A7", "A7");
-                addOption(typeSelect, "A8", "A8");
+                addOption(typeSelect, "a1", "A1");
+                addOption(typeSelect, "a2", "A2");
+                addOption(typeSelect, "a3", "A3");
+                addOption(typeSelect, "a4", "A4");
+                addOption(typeSelect, "a5", "A5");
+                addOption(typeSelect, "a6", "A6");
+                addOption(typeSelect, "a7", "A7");
+                addOption(typeSelect, "a8", "A8");
             } else if (sySelect.value === "sy2") {
-                addOption(typeSelect, "B1", "B1");
-                addOption(typeSelect, "B2", "B2");
-                addOption(typeSelect, "B3", "B3");
-                addOption(typeSelect, "B4", "B4");
-                addOption(typeSelect, "B5", "B5");
-                addOption(typeSelect, "B6", "B6");
-                addOption(typeSelect, "B7", "B7");
-                addOption(typeSelect, "B8", "B8");
-                addOption(typeSelect, "D1", "D1");
-                addOption(typeSelect, "D2", "D2");
+                addOption(typeSelect, "b1", "B1");
+                addOption(typeSelect, "b2", "B2");
+                addOption(typeSelect, "b3", "B3");
+                addOption(typeSelect, "b4", "B4");
+                addOption(typeSelect, "b5", "B5");
+                addOption(typeSelect, "b6", "B6");
+                addOption(typeSelect, "b7", "B7");
+                addOption(typeSelect, "b8", "B8");
+                addOption(typeSelect, "d1", "D1");
+                addOption(typeSelect, "d2", "D2");
             } else if (sySelect.value === "sy3") {
-                addOption(typeSelect, "c1", "c1");
-                addOption(typeSelect, "c2", "c2");
-                addOption(typeSelect, "c3", "c3");
-                addOption(typeSelect, "c4", "c4");
-                addOption(typeSelect, "c5", "c5");
-                addOption(typeSelect, "c6", "c6");
-                addOption(typeSelect, "c7", "c7");
-                addOption(typeSelect, "c8", "c8");
-                addOption(typeSelect, "c9", "c9");
+                addOption(typeSelect, "c1", "C1");
+                addOption(typeSelect, "c2", "C2");
+                addOption(typeSelect, "c3", "C3");
+                addOption(typeSelect, "c4", "C4");
+                addOption(typeSelect, "c5", "C5");
+                addOption(typeSelect, "c6", "C6");
+                addOption(typeSelect, "c7", "C7");
+                addOption(typeSelect, "c8", "C8");
+                addOption(typeSelect, "c9", "C9");
             }
             updateType(); // Update type immediately after options change
         }
@@ -120,7 +120,7 @@
             var selectedDay = document.getElementById("daySelect").value;
 
             // Convert selectedType to uppercase and construct the image source
-            var imageSource = "timetable/" + selectedType + "_" + selectedDay + "_" + currentIndex + ".JPG";
+            var imageSource ="timetable/"+ selectedType + "_" + selectedDay + "_" + currentIndex + ".jpg";
 
             // Update the image source
             document.getElementById("selectedImage").src = imageSource;
