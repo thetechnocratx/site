@@ -22,10 +22,15 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
+    border: 2px solid #ddd;
+    border-left: #007bff;
+    border-right: #007bff;
 }
 
 nav a:hover {
     text-decoration: underline;
+    color: #721c24;
+    border-color: #721c24;
 }
 
 .main-content {
