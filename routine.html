@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,7 @@
         /* Your existing styles here */
     </style>
 </head>
-
 <body>
-
     <header>
         <h1>Class Routine Checker</h1>
     </header>
@@ -20,11 +17,10 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="mailto:thetechnocrat100@gmail.com">feedback</a>
+        <a href="mailto:thetechnocrat100@email.com">feedback</a>
     </nav>
 
-    <form id="myForm" onsubmit="displayImage(); return false;">
-
+    <form id="myForm">
         <label for="sySelect">Choose Department:</label>
         <select id="sySelect" name="sySelect" onchange="updateTypeOptions()">
             <option value="sy1">SY1</option>
@@ -37,6 +33,7 @@
 
         <label for="daySelect">Choose a Day:</label>
         <select id="daySelect" name="daySelect">
+           
             <option value="monday">Monday</option>
             <option value="tuesday">Tuesday</option>
             <option value="wednesday">Wednesday</option>
@@ -45,12 +42,12 @@
             <option value="saturday">Saturday</option>
         </select>
 
-        <input type="submit" value="Submit">
+        <!-- Remove the "Submit" button -->
     </form>
 
     <!-- Display the image based on the selections -->
     <img id="selectedImage" src="" alt="Selected Image">
-    <br>
+
     <div class="button-container">
         <button onclick="prevDay()">&#8249; Previous Day</button>
         <button onclick="nextDay()">Next Day &#8250;</button>
@@ -61,7 +58,7 @@
         <button onclick="prevType()">&#8249; Previous Batch</button>
         <button onclick="nextType()">Next Batch &#8250;</button>
     </div>
-    <br>
+
     <script>
         var currentIndex = 0; // Index to track the current image for the selected day
         var currentTypeIndex = 0; // Index to track the current type
@@ -126,7 +123,6 @@
             document.getElementById("selectedImage").src = imageSource;
         }
 
-
         function nextImage() {
             currentIndex = (currentIndex + 1) % 3; // Assuming you have 3 images per day
             displayImage();
@@ -167,15 +163,40 @@
             displayImage();
         }
 
+        // Function to set the selected day based on the current date
+        function setDayBasedOnCurrentDate() {
+            var daySelect = document.getElementById("daySelect");
+            var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            var currentDate = new Date();
+            var currentDay = days[currentDate.getDay()]; // Get the current day (e.g., "tuesday")
+
+            // Set the selected day option based on the current day
+            for (var i = 0; i < daySelect.options.length; i++) {
+                if (daySelect.options[i].value === currentDay) {
+                    daySelect.selectedIndex = i;
+                    break;
+                }
+            }
+
+            // Update the image based on the current day
+            displayImage();
+        }
+
         // Call the function to initialize the options based on the default selection
         updateTypeOptions();
+
+        // Add event listeners to update the image when the user selects different options
+        document.getElementById("sySelect").addEventListener("change", updateTypeOptions);
+        document.getElementById("typeSelect").addEventListener("change", displayImage);
+        document.getElementById("daySelect").addEventListener("change", displayImage);
+
+        // Call the function to set the selected day when the page loads
+        window.onload = setDayBasedOnCurrentDate;
     </script>
     <footer>
-        <!-- <p>&copy; 2023 College Notes. All rights reserved.</p> -->
-        <a style="color: white;" href="rights.html" All rights reserved target="_blank">
+        <a style="color: white;" href="rights.html" target="_blank">
             <p>&copy; 2023 College Notes. All rights reserved.</p>
         </a>
     </footer>
 </body>
-
 </html>
