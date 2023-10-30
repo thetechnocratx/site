@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,16 @@
         /* Your existing styles here */
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVTVE8ENYD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-LVTVE8ENYD');
+</script>
+
 <body>
     <header>
         <h1>Class Routine Checker</h1>
@@ -33,7 +44,7 @@
 
         <label for="daySelect">Choose a Day:</label>
         <select id="daySelect" name="daySelect">
-           
+
             <option value="monday">Monday</option>
             <option value="tuesday">Tuesday</option>
             <option value="wednesday">Wednesday</option>
@@ -193,19 +204,12 @@
         // Call the function to set the selected day when the page loads
         window.onload = setDayBasedOnCurrentDate;
     </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVTVE8ENYD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-LVTVE8ENYD');
-</script>
     <footer>
         <a style="color: white;" href="rights.html" target="_blank">
             <p>&copy; 2023 College Notes. All rights reserved.</p>
         </a>
     </footer>
 </body>
+
 </html>
